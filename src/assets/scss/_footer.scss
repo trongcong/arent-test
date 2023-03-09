@@ -1,0 +1,22 @@
+.footer {
+  background: #414141;
+  padding: 56px 0;
+
+  .-menu-wrap ul.-menu {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 45px;
+    list-style: none;
+
+    li a{
+      font-family: $secondary-font;
+      font-weight: 300;
+      font-size: 11px;
+      line-height: 1.45;
+      letter-spacing: 0.033px;
+      color: #FFFFFF;
+    }
+  }
+}

@@ -6,8 +6,11 @@
 @import "~bootstrap-scss/mixins";
 @import "~bootstrap-scss/bootstrap-grid";
 
-@import "../fonts/fonts";
+@import "fonts";
 @import "mixins";
 @import "app";
+@import "top-page";
+@import "column-page";
+@import "my-record-page";
 @import "header";
 @import "footer";

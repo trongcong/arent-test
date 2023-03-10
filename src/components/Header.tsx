@@ -1,6 +1,30 @@
 import AppLink from "./AppLink";
-import {LogoIcon} from "../assets";
-import {HEADER_MENU} from "../common/constants";
+import {ChallengeIcon, LogoIcon, NoticeIcon, RecordIcon} from "../assets";
+import MenuMobile from "./MenuMobile";
+import {HeaderMenuItemTypes} from "../common/types";
+
+const HEADER_MENU: HeaderMenuItemTypes[] = [
+    {
+        url: '/record',
+        text: '自分の記録',
+        icon: <RecordIcon/>
+    },
+    {
+        url: '/challenge',
+        text: 'チャレンジ',
+        icon: <ChallengeIcon/>
+    },
+    {
+        url: '/notice',
+        text: 'お知らせ',
+        icon: (
+            <div className="notice-wrap">
+                <NoticeIcon/>
+                <div className="notice">1</div>
+            </div>
+        )
+    },
+]
 
 function Header() {
     return (
@@ -29,7 +53,7 @@ function Header() {
                                         })
                                     }
                                 </ul>
-                                <div className="-canvas-menu"></div>
+                                <MenuMobile/>
                             </div>
                         </div>
                     </div>

@@ -10,13 +10,17 @@
     gap: 45px;
     list-style: none;
 
-    li a{
+    li a {
       font-family: $secondary-font;
       font-weight: 300;
       font-size: 11px;
       line-height: 1.45;
       letter-spacing: 0.033px;
       color: #FFFFFF;
+
+      &:hover {
+        color: $primary-color;
+      }
     }
   }
 }

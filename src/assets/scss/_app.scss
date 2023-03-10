@@ -17,8 +17,18 @@ a {
   transition: .3s;
 }
 
+button {
+  cursor: pointer;
+}
+
+ul, ol {
+  margin: 0;
+  padding: 0;
+}
+
 main.content-wrap {
   min-height: calc(100vh - 206.5px);
+  padding-bottom: 65px;
 }
 
 .btn-to-top {
@@ -34,6 +44,27 @@ main.content-wrap {
   position: fixed;
   bottom: 20vh;
   right: 5vw;
+}
+
+.btn-more-record {
+  background: linear-gradient(32.95deg, #ffcc21 8.75%, #ff963c 86.64%);
+  border: none;
+  font-family: $secondary-font;
+  font-weight: 300;
+  font-size: 18px;
+  line-height: 1.44;
+  text-align: center;
+  color: #ffffff;
+  padding: 15px;
+  min-width: 250px;
+  border-radius: 4px;
+  margin: auto;
+  display: block;
+  transition: .3s;
+
+  &:hover {
+    opacity: .9;
+  }
 }
 
 .not-found {

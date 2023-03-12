@@ -1,10 +1,10 @@
-##System info
+## System info
 ```
 node: 16.15.1
 react: ^18.2.0
 npm: 8.11.0
 ```
-##In the project directory, you can run:
+## In the project directory, you can run:
 
 ### `yarn start`
 
@@ -16,7 +16,7 @@ See the section about [running tests](https://facebook.github.io/create-react-ap
 Builds the app for production to the `build` folder.\
 It correctly bundles React in production mode and optimizes the build for the best performance.
 
-##Project struct
+## Project structure
 ```
 ├── public       #This folder contains all the public resources of the project, such as HTML, CSS, and JavaScript files used to display your website.
 └── src          #This is the main folder of the project, containing all the source code of the application.
@@ -32,8 +32,8 @@ It correctly bundles React in production mode and optimizes the build for the be
 
 ```
 
-##Preview
+## Preview app
 https://arent-test-ntc.vercel.app/
 
-##Project time detail
+## Project time detail
 [![wakatime](https://wakatime.com/badge/user/492f22bd-bc00-4211-b06b-ff07e1d6e7a3/project/13ce68e2-242f-43c5-aaef-6a0085bced57.svg)](https://wakatime.com/@ntc/projects/ubbwssvlgs)

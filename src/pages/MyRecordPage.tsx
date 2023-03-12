@@ -3,23 +3,21 @@ import M1 from '../assets/images/MyRecommend-1.jpg'
 import M2 from '../assets/images/MyRecommend-2.jpg'
 import M3 from '../assets/images/MyRecommend-3.jpg'
 import {useState} from "react";
-import {MEALS_HISTORY} from "../common/constants";
+import {createChartData, MY_DIARY_DATA} from "../common/constants";
 import ButtonMoreRecord from "../components/ButtonMoreRecord";
-
-const MY_DIARY_DATA = Array.from(Array(8).keys())
-    .map(() => ({
-        title: "私の日記の記録が一部表示されます。",
-        text: 'テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト…',
-        date: '2021.05.21',
-        time: '23:25',
-    }))
-
+import LineChart from "../components/LineChart";
+import {LineChartProps, MyDiaryItemType} from "../common/types";
 
 function MyRecordPage() {
-    const [data, setData] = useState(MY_DIARY_DATA);
-
+    const [dataDiary, setDataDiary] = useState<MyDiaryItemType[]>(MY_DIARY_DATA);
+    const [chartActive, setChartActive] = useState<number>(0);
+    const [chartData, setChartData] = useState<LineChartProps["data"]>(createChartData(21));
     const handleMoreRecord = () => {
-        setData((prevData) => [...prevData, ...MY_DIARY_DATA]);
+        setDataDiary((prevData) => [...prevData, ...MY_DIARY_DATA]);
+    };
+    const handleChangeChart = (index: number) => {
+        setChartActive(index)
+        setChartData(createChartData(21))
     };
 
     return (
@@ -51,12 +49,31 @@ function MyRecordPage() {
                             </div>
                         </div>
 
-                        <div className="chart">
-                            chart
+                        <div className="chart-ss">
+                            <div className="ss-top">
+                                <span>BODY <br/>RECORD</span>
+                                <span className="time">2021.05.21</span>
+                            </div>
+                            <div className="chart-box">
+                                <LineChart data={chartData}/>
+                                <div className="chart-filter">
+                                    {["日", "週", "月", "年"].map((item, index) => {
+                                        return (
+                                            <button
+                                                key={index}
+                                                className={`chart-btn ${chartActive === index ? "-active" : ""}`}
+                                                onClick={() => handleChangeChart(index)}
+                                            >
+                                                {item}
+                                            </button>
+                                        );
+                                    })}
+                                </div>
+                            </div>
                         </div>
 
                         <div className="exercise">
-                            <div className="ex-top">
+                            <div className="ss-top">
                                 <span>MY EXERCISE</span>
                                 <span className="time">2021.05.21</span>
                             </div>
@@ -87,7 +104,7 @@ function MyRecordPage() {
                         <div className="my-diary">
                             <h3>MY DIARY</h3>
                             <div className="my-diary-grid">
-                                {data.map((item, i) => {
+                                {dataDiary.map((item, i) => {
                                     return (
                                         <div key={i} className="item">
                                             <div className="date">{item.date}</div>

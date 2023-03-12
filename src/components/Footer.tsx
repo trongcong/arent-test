@@ -1,5 +1,4 @@
 import AppLink from "./AppLink";
-import {LogoIcon} from "../assets";
 import {FOOTER_MENU} from "../common/constants";
 
 function Footer() {

@@ -1,4 +1,23 @@
 .my-record-page {
+  .ss-top {
+    display: flex;
+    gap: 15px;
+    font-size: 15px;
+    text-transform: uppercase;
+    font-weight: 400;
+    margin-bottom: 5px;
+    align-items: baseline;
+    color: white;
+
+    > span:nth-child(1) {
+      max-width: 95px;
+    }
+
+    .time {
+      font-size: 22px;
+    }
+  }
+
   .my-recommend {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -76,29 +95,40 @@
     }
   }
 
+  .chart-ss {
+    background: #414141;
+    padding: 16px 24px;
+
+    .chart-wrap {
+      padding: 10px 30px;
+    }
+
+    .chart-filter {
+      display: flex;
+      gap: 16px;
+      align-items: center;
+
+      > .chart-btn {
+        width: 56px;
+        height: 24px;
+        border-radius: 11px;
+        background: white;
+        color: $secondary-color;
+        border: none;
+
+        &.-active {
+          background: $secondary-color;
+          color: white;
+        }
+      }
+    }
+  }
+
   .exercise {
     background: #414141;
     padding: 16px 24px;
     color: white;
     margin: 56px 0;
-
-    .ex-top {
-      display: flex;
-      gap: 15px;
-      font-size: 15px;
-      text-transform: uppercase;
-      font-weight: 400;
-      margin-bottom: 5px;
-      align-items: baseline;
-
-      > span:nth-child(1) {
-        max-width: 95px;
-      }
-
-      .time {
-        font-size: 22px;
-      }
-    }
 
     .ex-list {
       height: 200px;

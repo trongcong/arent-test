@@ -1,6 +1,6 @@
 import React from 'react';
 import DefaultLayout from "./layouts/DefaultLayout";
-import {Navigate, Route, Routes} from "react-router-dom";
+import { Route, Routes} from "react-router-dom";
 import TopPage from "./pages/TopPage";
 import NotFound from "./pages/NotFound";
 import {ROUTES} from "./common/constants";

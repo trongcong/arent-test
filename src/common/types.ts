@@ -1,3 +1,5 @@
+import {ChartProps} from "react-chartjs-2/dist/types";
+
 export interface FooterMenuItemTypes {
     url: string;
     text: string;
@@ -38,3 +40,12 @@ export interface ColumnItemType {
     tags: string[];
     img: string;
 }
+
+export interface MyDiaryItemType {
+    date: string;
+    text: string;
+    time: string;
+    title: string
+}
+
+export interface LineChartProps extends Omit<ChartProps<'line'>, 'type'>{}

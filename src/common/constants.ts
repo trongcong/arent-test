@@ -1,8 +1,8 @@
 import {
     ColumnItemType,
-    FooterMenuItemTypes,
+    FooterMenuItemTypes, LineChartProps,
     MealsHistoryItemTypes,
-    MobileMenuItemTypes,
+    MobileMenuItemTypes, MyDiaryItemType,
     RecommendItemType
 } from "./types";
 
@@ -169,3 +169,47 @@ export const COLUMNS: ColumnItemType[] = [
         img: C8
     },
 ]
+
+export const MY_DIARY_DATA: MyDiaryItemType[] = Array.from(Array(8).keys())
+    .map(() => ({
+        title: "私の日記の記録が一部表示されます。",
+        text: 'テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト…',
+        date: '2021.05.21',
+        time: '23:25',
+    }))
+
+const CHART_LABELS: LineChartProps['data']['labels'] = [
+    "6月",
+    "7月",
+    "8月",
+    "9月",
+    "10月",
+    "11月",
+    "12月",
+    "1月",
+    "2月",
+    "3月",
+    "4月",
+    "5月",
+];
+
+export const createChartData = (value: number = 11): LineChartProps["data"] => {
+    return {
+        labels: CHART_LABELS,
+        datasets:
+            [
+                {
+                    label: "Data 1",
+                    data: CHART_LABELS.map(() => Math.floor(Math.random() * value)),
+                    borderColor: "#FFCC21",
+                    backgroundColor: "#FFCC21",
+                },
+                {
+                    label: "Data 2",
+                    data: CHART_LABELS.map(() => Math.floor(Math.random() * value)),
+                    borderColor: "#8FE9D0",
+                    backgroundColor: "#8FE9D0",
+                },
+            ],
+    }
+};

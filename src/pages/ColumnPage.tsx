@@ -1,5 +1,5 @@
 import AppLink from "../components/AppLink";
-import {COLUMNS, MEALS_HISTORY, RECOMMEND_ITEMS} from "../common/constants";
+import {COLUMNS, RECOMMEND_ITEMS} from "../common/constants";
 import ButtonMoreRecord from "../components/ButtonMoreRecord";
 import {useState} from "react";
 
